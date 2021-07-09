@@ -7,7 +7,7 @@
 
 
     <table class="table">
-      <thead>
+      <thead class="thead-light">
       <tr>
         <th>Name</th>
         <th>Email</th>
@@ -16,6 +16,7 @@
       </thead>
 
       <tbody>
+
       <% @users.each do |user| %>
         <tr>
           <td><%= user.name %></td>
@@ -25,7 +26,10 @@
           <td><span class="glyphicon glyphicon-trash" aria-hidden="true"></span><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
+
+      <%= will_paginate @users %>
       </tbody>
+
     </table>
 
   </div>
